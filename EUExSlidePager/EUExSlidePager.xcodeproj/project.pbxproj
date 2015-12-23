@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3C20F10E19C685D600D30DC5 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C20F10D19C685D600D30DC5 /* MenuView.m */; };
 		3C7D78981994A9FA000D8179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D78971994A9FA000D8179 /* Foundation.framework */; };
-		3C7D789D1994A9FA000D8179 /* EUExSlidePager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C7D789C1994A9FA000D8179 /* EUExSlidePager.h */; };
 		3C7D789F1994A9FA000D8179 /* EUExSlidePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D789E1994A9FA000D8179 /* EUExSlidePager.m */; };
 		3C7D78D51994AAC5000D8179 /* BottomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D78CC1994AAC5000D8179 /* BottomScrollView.m */; };
 		3C7D78D61994AAC5000D8179 /* Golble.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D78CE1994AAC5000D8179 /* Golble.m */; };
@@ -17,19 +16,6 @@
 		3C7D78DB1994ABEB000D8179 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D78DA1994ABEB000D8179 /* UIKit.framework */; };
 		3CAA0A7C19C0257600DA138E /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA0A7B19C0257600DA138E /* MyWebView.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3C7D78921994A9FA000D8179 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				3C7D789D1994A9FA000D8179 /* EUExSlidePager.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C20F10C19C685D600D30DC5 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
@@ -176,7 +162,6 @@
 			buildPhases = (
 				3C7D78901994A9FA000D8179 /* Sources */,
 				3C7D78911994A9FA000D8179 /* Frameworks */,
-				3C7D78921994A9FA000D8179 /* CopyFiles */,
 			);
 			buildRules = (
 			);
