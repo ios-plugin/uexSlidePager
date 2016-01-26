@@ -37,14 +37,29 @@
     NSString * iconStr = [array objectAtIndex:2];
     NSArray * iconArray = [iconStr componentsSeparatedByString:@","];
     NSString * colorStr = [array objectAtIndex:3];
+    
     NSArray * colorArray = [colorStr componentsSeparatedByString:@","];
     if (!self.menuV) {
         self.menuV = [[MenuView alloc]initWithUexObj:self top:topMargin];
     }
-    
+    //-------------------------------------------
+    NSString *jsonStr = nil;
+    if (array.count > 0) {
+        
+        jsonStr = [array objectAtIndex:4];
+        self.jsonDict = [jsonStr JSONValue];//将JSON类型的字符串转化为可变字典
+        
+    }else{
+        return;
+    }
+    _menuV.iconArray=iconArray;
+    BOOL isShowIcon = [[self.jsonDict objectForKey:@"isShowIcon"] boolValue];
+    if (!isShowIcon) {
+    _menuV.iconArray= nil;
+    }
+    //--------------------------------------------
     _menuV.frame=CGRectMake(0, topMargin, (float)[EUtility screenWidth], (float)[EUtility screenHeight]-topMargin);
     _menuV.contentArray=contentArray;
-    _menuV.iconArray=iconArray;
     _menuV.colorArray=colorArray;
     [_menuV loadData];
     [_menuV setCurrentPage:0];

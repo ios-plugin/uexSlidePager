@@ -52,8 +52,11 @@
     self.buttonOriginXArray = [NSMutableArray array];
     self.buttonWithArray = [NSMutableArray array];
     float xPos = (320*COEFFICIENT-(40*COEFFICIENT*7))/7;
-    for (int i = 0; i < [_dataArray count]; i++) {
-        NSString * iconStr=[_dataArray objectAtIndex:i];
+    for (int i = 0; i < [_colorArray count]; i++) {
+        NSString * iconStr = nil;
+        if (_dataArray ) {
+           iconStr=[_dataArray objectAtIndex:i];
+        }
         NSString * imageURL = [_uexObj absPath:iconStr];
         UIView *iconView=[[UIView alloc]initWithFrame:CGRectMake(xPos, 35*COEFFICIENT, 40*COEFFICIENT, 40*COEFFICIENT)];
         iconView.layer.cornerRadius = 4*COEFFICIENT;

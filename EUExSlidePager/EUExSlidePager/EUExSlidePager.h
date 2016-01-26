@@ -14,5 +14,5 @@
 
 
 @property (nonatomic, retain) MenuView * menuV;
-
+@property (nonatomic, retain) NSMutableDictionary *jsonDict;
 @end

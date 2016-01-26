@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexSlidePager" version="3.0.12" build="12">
-        <info>12:添加IDE支持</info>
+        uexName="uexSlidePager" version="3.0.13" build="13">
+        <info>13:openSlidePager接口添加option参数 </info>
+        <build>12:添加IDE支持</build>
         <build>11:适配iPhone6和iPhone6 Plus</build>
         <build>10:修复打开白屏问题</build>
         <build>9:修复动态库生成不成功的问题</build>
