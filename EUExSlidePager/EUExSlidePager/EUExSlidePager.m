@@ -44,18 +44,19 @@
     }
     //-------------------------------------------
     NSString *jsonStr = nil;
-    if (array.count > 0) {
-        
+    BOOL isShowIcon = YES;
+    if (array.count > 4) {
         jsonStr = [array objectAtIndex:4];
         self.jsonDict = [jsonStr JSONValue];//将JSON类型的字符串转化为可变字典
-        
+        isShowIcon = [[self.jsonDict objectForKey:@"isShowIcon"] boolValue];
     }else{
         return;
     }
-    _menuV.iconArray=iconArray;
-    BOOL isShowIcon = [[self.jsonDict objectForKey:@"isShowIcon"] boolValue];
-    if (!isShowIcon) {
-    _menuV.iconArray= nil;
+    
+    if (isShowIcon) {
+        _menuV.iconArray = iconArray;
+    }else{
+        _menuV.iconArray= nil;
     }
     //--------------------------------------------
     _menuV.frame=CGRectMake(0, topMargin, (float)[EUtility screenWidth], (float)[EUtility screenHeight]-topMargin);
