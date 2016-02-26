@@ -47,7 +47,8 @@
     BOOL isShowIcon = YES;
     if (array.count > 4) {
         jsonStr = [array objectAtIndex:4];
-         isShowIcon = [jsonStr boolValue];
+        self.jsonDict = [jsonStr JSONValue];//将JSON类型的字符串转化为可变字典
+        isShowIcon = [[self.jsonDict objectForKey:@"isShowIcon"] boolValue];
        }
     
     if (isShowIcon) {
