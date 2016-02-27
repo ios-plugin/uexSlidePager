@@ -32,13 +32,9 @@
         [Globle shareInstance].globleHeight -= 20;
     }
     float topMargin = [[array objectAtIndex:0] floatValue];
-    NSString * contentStr = [array objectAtIndex:1];
-    NSArray * contentArray = [contentStr componentsSeparatedByString:@","];
-    NSString * iconStr = [array objectAtIndex:2];
-    NSArray * iconArray = [iconStr componentsSeparatedByString:@","];
-    NSString * colorStr = [array objectAtIndex:3];
-    
-    NSArray * colorArray = [colorStr componentsSeparatedByString:@","];
+    NSArray * contentArray = [array objectAtIndex:1];
+    NSArray * iconArray = [array objectAtIndex:2] ;
+    NSArray * colorArray = [array objectAtIndex:3];
     NSMutableArray *emptyArr = [NSMutableArray array];
     for (int i = 0 ; i < colorArray.count; i++) {
         [emptyArr addObject:@""];
