@@ -39,6 +39,10 @@
     NSString * colorStr = [array objectAtIndex:3];
     
     NSArray * colorArray = [colorStr componentsSeparatedByString:@","];
+    NSMutableArray *emptyArr = [NSMutableArray array];
+    for (int i = 0 ; i < colorArray.count; i++) {
+        [emptyArr addObject:@""];
+    }
     if (!self.menuV) {
         self.menuV = [[MenuView alloc]initWithUexObj:self top:topMargin];
     }
@@ -49,12 +53,13 @@
         jsonStr = [array objectAtIndex:4];
         self.jsonDict = [jsonStr JSONValue];//将JSON类型的字符串转化为可变字典
         isShowIcon = [[self.jsonDict objectForKey:@"isShowIcon"] boolValue];
-       }
+        
+    }
     
     if (isShowIcon) {
         _menuV.iconArray = iconArray;
     }else{
-        _menuV.iconArray= nil;
+        _menuV.iconArray= emptyArr;
     }
     //--------------------------------------------
     _menuV.frame=CGRectMake(0, topMargin, (float)[EUtility screenWidth], (float)[EUtility screenHeight]-topMargin);
