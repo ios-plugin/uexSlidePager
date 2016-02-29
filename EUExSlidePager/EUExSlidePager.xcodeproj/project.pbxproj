@@ -286,7 +286,7 @@
 		3C7D78B81994A9FB000D8179 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexSlidePager/";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexSlidePager";
 				DSTROOT = /tmp/EUExSlidePager.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EUExSlidePager/EUExSlidePager-Prefix.pch";
@@ -299,7 +299,7 @@
 		3C7D78B91994A9FB000D8179 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexSlidePager/";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexSlidePager";
 				DSTROOT = /tmp/EUExSlidePager.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EUExSlidePager/EUExSlidePager-Prefix.pch";

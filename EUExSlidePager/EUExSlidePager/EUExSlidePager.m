@@ -35,10 +35,7 @@
     NSArray * contentArray = [array objectAtIndex:1];
     NSArray * iconArray = [array objectAtIndex:2] ;
     NSArray * colorArray = [array objectAtIndex:3];
-    NSMutableArray *emptyArr = [NSMutableArray array];
-    for (int i = 0 ; i < colorArray.count; i++) {
-        [emptyArr addObject:@""];
-    }
+    
     if (!self.menuV) {
         self.menuV = [[MenuView alloc]initWithUexObj:self top:topMargin];
     }
@@ -55,6 +52,10 @@
     if (isShowIcon) {
         _menuV.iconArray = iconArray;
     }else{
+        NSMutableArray *emptyArr = [NSMutableArray array];
+        for (int i = 0 ; i < colorArray.count; i++) {
+            [emptyArr addObject:@" "];
+        }
         _menuV.iconArray= emptyArr;
     }
     //--------------------------------------------
