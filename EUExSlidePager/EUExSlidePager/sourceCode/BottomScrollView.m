@@ -48,21 +48,22 @@
 
 - (void)initWithNameButtons
 {
-    
     self.buttonOriginXArray = [NSMutableArray array];
     self.buttonWithArray = [NSMutableArray array];
     float xPos = (320*COEFFICIENT-(40*COEFFICIENT*7))/7;
     for (int i = 0; i < [_colorArray count]; i++) {
-        NSString * iconStr = nil;
+        NSString * iconStr;
         if (_dataArray ) {
-           iconStr=[_dataArray objectAtIndex:i];
+            iconStr=[_dataArray objectAtIndex:i];
+        }else{
+            return;
         }
         NSString * imageURL = [_uexObj absPath:iconStr];
         UIView *iconView=[[UIView alloc]initWithFrame:CGRectMake(xPos, 35*COEFFICIENT, 40*COEFFICIENT, 40*COEFFICIENT)];
         iconView.layer.cornerRadius = 4*COEFFICIENT;
         iconView.layer.masksToBounds = YES;
         [iconView setBackgroundColor:[UIColor whiteColor]];
-//        iconView.alpha=0.5;
+        //        iconView.alpha=0.5;
         UIImageView * iconImg=[[UIImageView alloc]initWithFrame:CGRectMake(2*COEFFICIENT, 2*COEFFICIENT, 36*COEFFICIENT, 36*COEFFICIENT)];
         iconImg.image=[UIImage imageWithContentsOfFile:imageURL];
         [iconView addSubview:iconImg];
@@ -84,13 +85,13 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 
 
@@ -134,7 +135,7 @@
         
     } completion:^(BOOL finished) {
         if (finished) {
-                _userSelectedChannelID = button.tag;
+            _userSelectedChannelID = button.tag;
         }
     }];
     for (int i = 0; i < [_dataArray count]; i++) {
@@ -182,6 +183,9 @@
 
 -(void)setScrollViewContentOffset
 {
+    if (_buttonOriginXArray.count == 0) {
+        return;
+    }
     int index=(int)_scrollViewSelectedChannelID - 100;
     if (index>=_buttonOriginXArray.count) {
         index=(int)_buttonOriginXArray.count-1;

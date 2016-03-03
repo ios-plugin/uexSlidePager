@@ -52,11 +52,7 @@
     if (isShowIcon) {
         _menuV.iconArray = iconArray;
     }else{
-        NSMutableArray *emptyArr = [NSMutableArray array];
-        for (int i = 0 ; i < colorArray.count; i++) {
-            [emptyArr addObject:@" "];
-        }
-        _menuV.iconArray= emptyArr;
+        _menuV.iconArray= nil;
     }
     //--------------------------------------------
     _menuV.frame=CGRectMake(0, topMargin, (float)[EUtility screenWidth], (float)[EUtility screenHeight]-topMargin);
