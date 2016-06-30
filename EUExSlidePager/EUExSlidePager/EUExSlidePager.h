@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EUExBase.h"
 #import "MenuView.h"
 
 @interface EUExSlidePager : EUExBase
 
 
-@property (nonatomic, retain) MenuView * menuV;
-@property (nonatomic, retain) NSMutableDictionary *jsonDict;
+@property (nonatomic, strong) MenuView * menuV;
+
+
+
+
+
+- (void)onChangeColorCallback:(NSString *)colorStr;
+
 @end

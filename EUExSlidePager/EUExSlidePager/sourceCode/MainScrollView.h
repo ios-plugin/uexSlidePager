@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EUExBase.h"
+#import "EUExSlidePager.h"
 
 
 
@@ -17,7 +17,7 @@
 @property(nonatomic,retain)NSArray * colorArray;
 @property(nonatomic)float userContentOffsetX;
 
-@property(nonatomic,retain)EUExBase * uexObj;
+@property(nonatomic,weak)EUExSlidePager * uexObj;
 @property(nonatomic,assign)float margin;
 
 

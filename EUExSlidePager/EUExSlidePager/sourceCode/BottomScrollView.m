@@ -7,9 +7,8 @@
 //
 
 #import "BottomScrollView.h"
-#import "Golble.h"
 #import "MainScrollView.h"
-#import "EUtility.h"
+
 
 //按钮空隙
 #define BUTTONGAP (320*COEFFICIENT-(40*COEFFICIENT*7))/7
@@ -24,7 +23,7 @@
     static BottomScrollView *_instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instance=[[self alloc] initWithFrame:CGRectMake(0, [Globle shareInstance].globleHeight-40*COEFFICIENT-margin, [Globle shareInstance].globleWidth, 40*COEFFICIENT)];
+        _instance=[[self alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 40 * COEFFICIENT - margin, SCREEN_WIDTH, 40*COEFFICIENT)];
         
     });
     return _instance;
@@ -243,10 +242,10 @@
         [self selectNameButton:loc];
         
         NSString * colorStr=[_colorArray objectAtIndex:loc];
-        UIColor * color=[EUtility ColorFromString:colorStr];
+        
+        UIColor * color=[UIColor ac_ColorWithHTMLColorString:colorStr];
         [self.superview setBackgroundColor:color];
-        NSString *jsstr = [NSString stringWithFormat:@"if(uexSlidePager.onChangeColor!=null){uexSlidePager.onChangeColor('%@');}",colorStr];
-        [EUtility brwView:_uexObj.meBrwView evaluateScript:jsstr];
+        [self.uexObj onChangeColorCallback:colorStr];
     }];
 }
 

@@ -9,11 +9,11 @@
 #import "MenuView.h"
 #import "MainScrollView.h"
 #import "BottomScrollView.h"
-#import "EUtility.h"
+
 
 @implementation MenuView
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -22,10 +22,10 @@
     return self;
 }
 
--(id)initWithUexObj:(EUExBase*)uexObj top:(float)margin{
+-(instancetype)initWithUexObj:(EUExSlidePager *)uexObj top:(float)margin{
     if (self=[super init]) {
-        _uexObj=uexObj;
-        _margin=margin;
+        _uexObj = uexObj;
+        _margin = margin;
     }
     return self;
 }
@@ -39,10 +39,10 @@
     [[BottomScrollView shareInstanceWithMargin:1] setButtonSelect];
     [[BottomScrollView shareInstanceWithMargin:1] setScrollViewContentOffset];
     NSString * colorStr=[_colorArray objectAtIndex:index];
-    UIColor * color=[EUtility ColorFromString:colorStr];
+    UIColor * color=[UIColor ac_ColorWithHTMLColorString:colorStr];
     [self setBackgroundColor:color];
-    NSString *jsstr = [NSString stringWithFormat:@"if(uexSlidePager.onChangeColor!=null){uexSlidePager.onChangeColor('%@');}",colorStr];
-    [EUtility brwView:_uexObj.meBrwView evaluateScript:jsstr];
+    [self.uexObj onChangeColorCallback:colorStr];
+
     
 }
 
@@ -76,7 +76,8 @@
     
     
     NSString * colorStr=[_colorArray objectAtIndex:0];
-    UIColor * color=[EUtility ColorFromString:colorStr];
+    
+    UIColor * color=[UIColor ac_ColorWithHTMLColorString:colorStr];
     [self setBackgroundColor:color];
 }
 
