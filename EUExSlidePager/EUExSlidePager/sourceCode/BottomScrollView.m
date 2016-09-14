@@ -58,7 +58,8 @@
             return;
         }
         NSString * imageURL = [_uexObj absPath:iconStr];
-        UIView *iconView=[[UIView alloc]initWithFrame:CGRectMake(xPos, 35*COEFFICIENT, 40*COEFFICIENT, 40*COEFFICIENT)];
+        UIControl *iconView=[[UIControl alloc]initWithFrame:CGRectMake(xPos, 35*COEFFICIENT, 40*COEFFICIENT, 40*COEFFICIENT)];
+        [iconView addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
         iconView.layer.cornerRadius = 4*COEFFICIENT;
         iconView.layer.masksToBounds = YES;
         [iconView setBackgroundColor:[UIColor whiteColor]];
@@ -82,7 +83,10 @@
     
     self.contentSize = CGSizeMake(xPos, 0);
 }
-
+-(void)tap:(id)sender{
+    UIControl * btn=(UIControl*)sender;
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexSlidePager.onIconSelected" arguments:ACArgsPack(@(btn.tag-100))];
+}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.
