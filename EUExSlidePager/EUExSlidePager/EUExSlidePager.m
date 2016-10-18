@@ -33,19 +33,26 @@
     //-------------------------------------------
     
     BOOL isShowIcon = YES;
-    
+    BOOL isShowContent = YES;
     if (jsonDict) {
-        isShowIcon = [jsonDict[@"isShowIcon"] boolValue];
+        isShowIcon = jsonDict[@"isShowIcon"]?[jsonDict[@"isShowIcon"] boolValue]:YES;
+        isShowContent = jsonDict[@"isShowContent"]?[jsonDict[@"isShowContent"] boolValue]:YES;
     }
     if (isShowIcon) {
         _menuV.iconArray = iconArray;
     }else{
         _menuV.iconArray= nil;
     }
+    if (isShowContent) {
+        _menuV.contentArray = contentArray;
+        _menuV.colorArray = colorArray;
+    }else{
+        _menuV.colorArray = nil;
+        _menuV.contentArray = nil;
+    }
     //--------------------------------------------
     _menuV.frame = CGRectMake(0, topMargin, SCREEN_WIDTH, SCREEN_HEIGHT - topMargin);
-    _menuV.contentArray = contentArray;
-    _menuV.colorArray = colorArray;
+    _menuV.isShowContent = isShowContent;
     [_menuV loadData];
     [_menuV setCurrentPage:0];
     [[self.webViewEngine webView]addSubview:self.menuV];

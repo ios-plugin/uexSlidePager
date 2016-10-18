@@ -54,25 +54,24 @@
 
 
 - (void)loadData {
-    MainScrollView *mainScrollView = [MainScrollView shareInstanceWithMargin:_margin];
-    //    mainScrollView.layer.cornerRadius = 50/2;
-    //    mainScrollView.layer.masksToBounds = YES;
+    if (_isShowContent) {
+        MainScrollView *mainScrollView = [MainScrollView shareInstanceWithMargin:_margin];
+        mainScrollView.dataArray = _contentArray;
+        mainScrollView.colorArray=_colorArray;
+        mainScrollView.uexObj=_uexObj;
+        [mainScrollView initWithViews];
+        [self addSubview:mainScrollView];
+    }
+   
     BottomScrollView *bottomScrollView = [BottomScrollView shareInstanceWithMargin:_margin];
-    
-    
-    
-    
-    mainScrollView.dataArray = _contentArray;
-    bottomScrollView.dataArray = _iconArray;
-    mainScrollView.colorArray=bottomScrollView.colorArray=_colorArray;
-    mainScrollView.uexObj=_uexObj;
+    bottomScrollView.iconArray = _iconArray;
+    bottomScrollView.colorArray=_colorArray;
     bottomScrollView.uexObj=_uexObj;
-    
-    [self addSubview:mainScrollView];
+    [bottomScrollView initWithNameButtons];
     [self addSubview:bottomScrollView];
     
-    [bottomScrollView initWithNameButtons];
-    [mainScrollView initWithViews];
+   
+   
     
     
     NSString * colorStr=[_colorArray objectAtIndex:0];

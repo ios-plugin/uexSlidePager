@@ -50,10 +50,10 @@
     self.buttonOriginXArray = [NSMutableArray array];
     self.buttonWithArray = [NSMutableArray array];
     float xPos = (320*COEFFICIENT-(40*COEFFICIENT*7))/7;
-    for (int i = 0; i < [_colorArray count]; i++) {
+    for (int i = 0; i < [_iconArray count]; i++) {
         NSString * iconStr;
-        if (_dataArray ) {
-            iconStr=[_dataArray objectAtIndex:i];
+        if (_iconArray ) {
+            iconStr=[_iconArray objectAtIndex:i];
         }else{
             return;
         }
@@ -141,7 +141,7 @@
             _userSelectedChannelID = button.tag;
         }
     }];
-    for (int i = 0; i < [_dataArray count]; i++) {
+    for (int i = 0; i < [_iconArray count]; i++) {
         UIView *button1 = (UIView *)[self viewWithTag:i+100];
         if (i+100!=_scrollViewSelectedChannelID) {
             CGRect rect1=button1.frame;
@@ -245,7 +245,11 @@
         [self setScrollViewContentOffset];
         [self selectNameButton:loc];
         
-        NSString * colorStr=[_colorArray objectAtIndex:loc];
+        NSString * colorStr = nil;
+        if (_colorArray.count>0) {
+            colorStr=[_colorArray objectAtIndex:loc];
+        }
+        
         
         UIColor * color=[UIColor ac_ColorWithHTMLColorString:colorStr];
         [self.superview setBackgroundColor:color];

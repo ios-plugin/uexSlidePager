@@ -11,7 +11,7 @@
 
 @interface BottomScrollView : UIScrollView<UIScrollViewDelegate>
 
-@property (nonatomic, retain) NSArray *dataArray;
+@property (nonatomic, retain) NSArray *iconArray;
 @property (nonatomic, retain) NSArray *colorArray;
 
 

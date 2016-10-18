@@ -21,7 +21,7 @@
 
 @property(nonatomic,retain)UIView * backView;
 
-
+@property(assign) BOOL isShowContent;
 
 
 - (instancetype)initWithUexObj:(EUExSlidePager *)uexObj top:(float)margin;
