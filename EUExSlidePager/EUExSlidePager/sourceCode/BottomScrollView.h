@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EUExBase.h"
+#import "EUExSlidePager.h"
 
 @interface BottomScrollView : UIScrollView<UIScrollViewDelegate>
 
-@property (nonatomic, retain) NSArray *dataArray;
+@property (nonatomic, retain) NSArray *iconArray;
 @property (nonatomic, retain) NSArray *colorArray;
 
 
@@ -22,7 +22,7 @@
 @property (nonatomic, assign)NSInteger userSelectedChannelID;        //点击按钮选择名字ID
 @property (nonatomic, assign)NSInteger scrollViewSelectedChannelID;  //滑动列表选择名字ID
 
-@property(nonatomic,retain)EUExBase * uexObj;
+@property(nonatomic,weak) EUExSlidePager * uexObj;
 
 + (BottomScrollView *)shareInstanceWithMargin:(float)margin;
 /**

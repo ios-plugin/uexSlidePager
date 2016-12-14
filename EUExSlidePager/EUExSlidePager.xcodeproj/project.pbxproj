@@ -11,10 +11,9 @@
 		3C7D78981994A9FA000D8179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D78971994A9FA000D8179 /* Foundation.framework */; };
 		3C7D789F1994A9FA000D8179 /* EUExSlidePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D789E1994A9FA000D8179 /* EUExSlidePager.m */; };
 		3C7D78D51994AAC5000D8179 /* BottomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D78CC1994AAC5000D8179 /* BottomScrollView.m */; };
-		3C7D78D61994AAC5000D8179 /* Golble.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D78CE1994AAC5000D8179 /* Golble.m */; };
 		3C7D78D71994AAC5000D8179 /* MainScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D78D01994AAC5000D8179 /* MainScrollView.m */; };
 		3C7D78DB1994ABEB000D8179 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7D78DA1994ABEB000D8179 /* UIKit.framework */; };
-		3CAA0A7C19C0257600DA138E /* MyWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA0A7B19C0257600DA138E /* MyWebView.m */; };
+		4250786D1D24F640003B6ECF /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4250786C1D24F640003B6ECF /* AppCanKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,27 +25,13 @@
 		3C7D789C1994A9FA000D8179 /* EUExSlidePager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EUExSlidePager.h; sourceTree = "<group>"; };
 		3C7D789E1994A9FA000D8179 /* EUExSlidePager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExSlidePager.m; sourceTree = "<group>"; };
 		3C7D78A51994A9FA000D8179 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3C7D78BE1994AABD000D8179 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
-		3C7D78BF1994AABD000D8179 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
-		3C7D78C01994AABD000D8179 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
-		3C7D78C21994AABD000D8179 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		3C7D78C31994AABD000D8179 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
-		3C7D78C41994AABD000D8179 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		3C7D78C51994AABD000D8179 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		3C7D78C61994AABD000D8179 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		3C7D78C71994AABD000D8179 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		3C7D78C81994AABD000D8179 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		3C7D78C91994AABD000D8179 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		3C7D78CB1994AAC5000D8179 /* BottomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomScrollView.h; sourceTree = "<group>"; };
 		3C7D78CC1994AAC5000D8179 /* BottomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomScrollView.m; sourceTree = "<group>"; };
-		3C7D78CD1994AAC5000D8179 /* Golble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Golble.h; sourceTree = "<group>"; };
-		3C7D78CE1994AAC5000D8179 /* Golble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Golble.m; sourceTree = "<group>"; };
 		3C7D78CF1994AAC5000D8179 /* MainScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScrollView.h; sourceTree = "<group>"; };
 		3C7D78D01994AAC5000D8179 /* MainScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScrollView.m; sourceTree = "<group>"; };
 		3C7D78DA1994ABEB000D8179 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C80C0821A2DA07100A3D8B9 /* FileEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileEncrypt.h; sourceTree = "<group>"; };
-		3CAA0A7A19C0257600DA138E /* MyWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebView.h; sourceTree = "<group>"; };
-		3CAA0A7B19C0257600DA138E /* MyWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebView.m; sourceTree = "<group>"; };
+		4250786C1D24F640003B6ECF /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C7D78DB1994ABEB000D8179 /* UIKit.framework in Frameworks */,
+				4250786D1D24F640003B6ECF /* AppCanKit.framework in Frameworks */,
 				3C7D78981994A9FA000D8179 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +78,7 @@
 		3C7D78991994A9FA000D8179 /* EUExSlidePager */ = {
 			isa = PBXGroup;
 			children = (
+				4250786C1D24F640003B6ECF /* AppCanKit.framework */,
 				3C7D78BD1994AABD000D8179 /* engineHeader */,
 				3C7D789C1994A9FA000D8179 /* EUExSlidePager.h */,
 				3C7D789E1994A9FA000D8179 /* EUExSlidePager.m */,
@@ -113,27 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				3C80C0821A2DA07100A3D8B9 /* FileEncrypt.h */,
-				3C7D78BE1994AABD000D8179 /* EUExBase.h */,
-				3C7D78BF1994AABD000D8179 /* EUExBaseDefine.h */,
-				3C7D78C01994AABD000D8179 /* EUtility.h */,
-				3C7D78C11994AABD000D8179 /* JSON */,
 			);
 			path = engineHeader;
-			sourceTree = "<group>";
-		};
-		3C7D78C11994AABD000D8179 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				3C7D78C21994AABD000D8179 /* JSON.h */,
-				3C7D78C31994AABD000D8179 /* JSONParser.h */,
-				3C7D78C41994AABD000D8179 /* NSObject+SBJSON.h */,
-				3C7D78C51994AABD000D8179 /* NSString+SBJSON.h */,
-				3C7D78C61994AABD000D8179 /* SBJSON.h */,
-				3C7D78C71994AABD000D8179 /* SBJsonBase.h */,
-				3C7D78C81994AABD000D8179 /* SBJsonParser.h */,
-				3C7D78C91994AABD000D8179 /* SBJsonWriter.h */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 		3C7D78CA1994AAC5000D8179 /* sourceCode */ = {
@@ -143,12 +111,8 @@
 				3C20F10D19C685D600D30DC5 /* MenuView.m */,
 				3C7D78CB1994AAC5000D8179 /* BottomScrollView.h */,
 				3C7D78CC1994AAC5000D8179 /* BottomScrollView.m */,
-				3C7D78CD1994AAC5000D8179 /* Golble.h */,
-				3C7D78CE1994AAC5000D8179 /* Golble.m */,
 				3C7D78CF1994AAC5000D8179 /* MainScrollView.h */,
 				3C7D78D01994AAC5000D8179 /* MainScrollView.m */,
-				3CAA0A7A19C0257600DA138E /* MyWebView.h */,
-				3CAA0A7B19C0257600DA138E /* MyWebView.m */,
 			);
 			path = sourceCode;
 			sourceTree = "<group>";
@@ -203,11 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C7D78D61994AAC5000D8179 /* Golble.m in Sources */,
 				3C7D78D51994AAC5000D8179 /* BottomScrollView.m in Sources */,
 				3C7D78D71994AAC5000D8179 /* MainScrollView.m in Sources */,
 				3C7D789F1994A9FA000D8179 /* EUExSlidePager.m in Sources */,
-				3CAA0A7C19C0257600DA138E /* MyWebView.m in Sources */,
 				3C20F10E19C685D600D30DC5 /* MenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +250,10 @@
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexSlidePager";
 				DSTROOT = /tmp/EUExSlidePager.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExSlidePager",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EUExSlidePager/EUExSlidePager-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -301,6 +267,10 @@
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexSlidePager";
 				DSTROOT = /tmp/EUExSlidePager.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExSlidePager",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EUExSlidePager/EUExSlidePager-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";

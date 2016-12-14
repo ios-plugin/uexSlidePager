@@ -7,9 +7,8 @@
 //
 
 #import "BottomScrollView.h"
-#import "Golble.h"
 #import "MainScrollView.h"
-#import "EUtility.h"
+
 
 //按钮空隙
 #define BUTTONGAP (320*COEFFICIENT-(40*COEFFICIENT*7))/7
@@ -24,7 +23,7 @@
     static BottomScrollView *_instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instance=[[self alloc] initWithFrame:CGRectMake(0, [Globle shareInstance].globleHeight-40*COEFFICIENT-margin, [Globle shareInstance].globleWidth, 40*COEFFICIENT)];
+        _instance=[[self alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 40 * COEFFICIENT - margin, SCREEN_WIDTH, 40*COEFFICIENT)];
         
     });
     return _instance;
@@ -51,15 +50,16 @@
     self.buttonOriginXArray = [NSMutableArray array];
     self.buttonWithArray = [NSMutableArray array];
     float xPos = (320*COEFFICIENT-(40*COEFFICIENT*7))/7;
-    for (int i = 0; i < [_colorArray count]; i++) {
+    for (int i = 0; i < [_iconArray count]; i++) {
         NSString * iconStr;
-        if (_dataArray ) {
-            iconStr=[_dataArray objectAtIndex:i];
+        if (_iconArray ) {
+            iconStr=[_iconArray objectAtIndex:i];
         }else{
             return;
         }
         NSString * imageURL = [_uexObj absPath:iconStr];
-        UIView *iconView=[[UIView alloc]initWithFrame:CGRectMake(xPos, 35*COEFFICIENT, 40*COEFFICIENT, 40*COEFFICIENT)];
+        UIControl *iconView=[[UIControl alloc]initWithFrame:CGRectMake(xPos, 35*COEFFICIENT, 40*COEFFICIENT, 40*COEFFICIENT)];
+        [iconView addTarget:self action:@selector(tap:) forControlEvents:UIControlEventTouchUpInside];
         iconView.layer.cornerRadius = 4*COEFFICIENT;
         iconView.layer.masksToBounds = YES;
         [iconView setBackgroundColor:[UIColor whiteColor]];
@@ -83,7 +83,10 @@
     
     self.contentSize = CGSizeMake(xPos, 0);
 }
-
+-(void)tap:(id)sender{
+    UIControl * btn=(UIControl*)sender;
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexSlidePager.onIconSelected" arguments:ACArgsPack(@(btn.tag-100))];
+}
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.
@@ -138,7 +141,7 @@
             _userSelectedChannelID = button.tag;
         }
     }];
-    for (int i = 0; i < [_dataArray count]; i++) {
+    for (int i = 0; i < [_iconArray count]; i++) {
         UIView *button1 = (UIView *)[self viewWithTag:i+100];
         if (i+100!=_scrollViewSelectedChannelID) {
             CGRect rect1=button1.frame;
@@ -242,11 +245,15 @@
         [self setScrollViewContentOffset];
         [self selectNameButton:loc];
         
-        NSString * colorStr=[_colorArray objectAtIndex:loc];
-        UIColor * color=[EUtility ColorFromString:colorStr];
+        NSString * colorStr = nil;
+        if (_colorArray.count>0) {
+            colorStr=[_colorArray objectAtIndex:loc];
+        }
+        
+        
+        UIColor * color=[UIColor ac_ColorWithHTMLColorString:colorStr];
         [self.superview setBackgroundColor:color];
-        NSString *jsstr = [NSString stringWithFormat:@"if(uexSlidePager.onChangeColor!=null){uexSlidePager.onChangeColor('%@');}",colorStr];
-        [EUtility brwView:_uexObj.meBrwView evaluateScript:jsstr];
+        [self.uexObj onChangeColorCallback:colorStr];
     }];
 }
 

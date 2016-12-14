@@ -7,11 +7,9 @@
 //
 
 #import "MainScrollView.h"
-#import "Golble.h"
+
 //#import "myContentView.h"
 #import "BottomScrollView.h"
-#import "EUtility.h"
-#import "MyWebView.h"
 #import "FileEncrypt.h"
 
 #define POSITIONID (int)(scrollView.contentOffset.x/(320.0*COEFFICIENT))
@@ -27,7 +25,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        _instance=[[self alloc] initWithFrame:CGRectMake(0, 5*COEFFICIENT, [Globle shareInstance].globleWidth, [Globle shareInstance].globleHeight-80*COEFFICIENT-margin)];
+        _instance=[[self alloc] initWithFrame:CGRectMake(0, 5*COEFFICIENT, SCREEN_WIDTH, SCREEN_HEIGHT-80*COEFFICIENT-margin)];
     });
     return _instance;
 }
@@ -56,8 +54,7 @@
 
 -(void)tap:(id)sender{
     UIButton * btn=(UIButton*)sender;
-    NSString *jsstr = [NSString stringWithFormat:@"if(uexSlidePager.onPageClick!=null){uexSlidePager.onPageClick('%d');}",(int)btn.tag];
-    [EUtility brwView:_uexObj.meBrwView evaluateScript:jsstr];
+    [self.uexObj.webViewEngine callbackWithFunctionKeyPath:@"uexSlidePager.onPageClick" arguments:ACArgsPack(@(btn.tag))];
 }
 
 -(BOOL)isEncrypted:(NSData *)srcData_{
@@ -82,7 +79,7 @@
         filePath = [_uexObj absPath:filePath];
         
         
-        MyWebView * webView=[[MyWebView alloc]initWithFrame:CGRectMake(10*COEFFICIENT+320*COEFFICIENT*i, 0, 300*COEFFICIENT, self.frame.size.height)];
+        UIWebView * webView=[[UIWebView alloc]initWithFrame:CGRectMake(10*COEFFICIENT+320*COEFFICIENT*i, 0, 300*COEFFICIENT, self.frame.size.height)];
         NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         
         
@@ -125,17 +122,16 @@
 - (void)adjustTopScrollViewButton:(UIScrollView *)scrollView
 {
     [[BottomScrollView shareInstanceWithMargin:1] setButtonUnSelect];
-    NSLog(@"POSITIONID==>%d,%f,%f",POSITIONID,scrollView.contentOffset.x,COEFFICIENT*320);
+    ACLogDebug(@"POSITIONID==>%d,%f,%f",POSITIONID,scrollView.contentOffset.x,COEFFICIENT*320);
     [BottomScrollView shareInstanceWithMargin:1].scrollViewSelectedChannelID = POSITIONID+100;
     [[BottomScrollView shareInstanceWithMargin:1] setButtonSelect];
     [[BottomScrollView shareInstanceWithMargin:1] setScrollViewContentOffset];
     NSString * colorStr=[_colorArray objectAtIndex:POSITIONID];
-    UIColor * color=[EUtility ColorFromString:colorStr];
+    UIColor * color=[UIColor ac_ColorWithHTMLColorString:colorStr];
     
     [self.superview setBackgroundColor:color];
-    
-    NSString *jsstr = [NSString stringWithFormat:@"if(uexSlidePager.onChangeColor!=null){uexSlidePager.onChangeColor('%@');}",colorStr];
-    [EUtility brwView:_uexObj.meBrwView evaluateScript:jsstr];
+    [self.uexObj onChangeColorCallback:colorStr];
+
 }
 
 /*
@@ -173,15 +169,6 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
 //    [self loadData];
-}
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-}
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 }
 
 
